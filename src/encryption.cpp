@@ -2,29 +2,20 @@
 #include "encryption.h"
 
 void encrypt(map<string, string> &phrases) {
-    cin.ignore();
-    bool done = false;;
+    bool done = false;
     
     while (!done) {        
         string phrase = getPhrase();
         if (phrase == "") break;
         
-        cout << "You've entered " << phrase << endl;
-        
         string key = getKey(phrase.length());
-
-        key = toUpper(key);
-        cout << "You've entered " << key;
         
-        if (key.length() < phrase.length()) {
-            key = expand(phrase.length(), key);
-            cout << ", expanded to " << key;
-        }
+        string encryptedPhrase = encrypt(phrase, key);
+        phrases.insert(pair<string, string>(encryptedPhrase, key));
         
         cout << endl << endl;
-
-        phrases.insert(pair<string, string>(phrase, key));
-        cout << "Encryption saved!" << endl << endl;
+        cout << phrase << " encrypted as " << encryptedPhrase 
+                << " and saved!" << endl << endl;
     }
     
     cout << endl;
@@ -49,8 +40,12 @@ string getPhrase() {
         }
         else valid = true;
     }
+        
+    cout << "You've entered " << phrase;
 
-    phrase = toUpper(phrase);
+    phrase = convert(phrase);
+    
+    cout << ", converted to " << phrase << endl;
     
     return phrase;
 }
@@ -78,11 +73,27 @@ string getKey(int length) {
 
         else valid = true;
     }
+        
+    cout << "You've entered " << key;
+
+    key = convert(key);
+    
+    cout << ", converted to " << key;
     
     return key;
 }
 
 string encrypt(string phrase, string key) {
+    string encryptedPhrase = "";
+    string expandedKey = expand(phrase, key);
     
-    return "";
+    for (int i = 0; i < phrase.length(); i++) {
+        if (isalpha(phrase[i]))
+                encryptedPhrase += ((((phrase[i] - 65) + (expandedKey[i] - 65)) 
+                        % 26) + 65);
+    }
+    
+    encryptedPhrase = convert(encryptedPhrase);
+    
+    return encryptedPhrase;
 }

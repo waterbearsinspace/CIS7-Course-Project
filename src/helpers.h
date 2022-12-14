@@ -13,8 +13,10 @@ using namespace std;
 
 void displayPhrases(map<string, string> phrases);
 bool validString(string input);
-string toUpper(string input);
 bool validLen(int phrase, int key);
-string expand(int length, string key);
+string toUpper(string input);
+string removeSpaces(string key);
+string convert(string phrase);
+string expand(string phrase, string key);
 
 #endif /* HELPERS_H */

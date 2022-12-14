@@ -42,12 +42,12 @@ string getSelection() {
     string input = "";
     bool valid = false;
     
-    cin >> input;
+    getline(cin, input);
     
     while (!valid) {
         if ((input != "1") && (input != "2") && (input != "3")) {
             cout << "Invalid input, please try again: ";
-            cin >> input;
+            getline(cin, input);
         }
         else {
             valid = true;

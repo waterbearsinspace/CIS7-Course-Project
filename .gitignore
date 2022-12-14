@@ -1,0 +1,6 @@
+src/build
+src/dist
+src/nbproject
+src/.dep.inc
+src/Makefile
+src/src.exe.stackdump

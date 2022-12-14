@@ -40,9 +40,21 @@ string toUpper(string input){
     return converted;
 }
 
-
-
 bool validLen(int phrase, int key) {
     if (phrase >= key) return true;
     else return false;
+}
+
+string expand(int length, string key) {
+    string expandedKey = "";
+    int pos = 0;
+    
+    for (int i = 0; i < length; i++) {
+        expandedKey += key[pos];
+        
+        pos++;
+        if (pos == key.length()) pos = 0;
+    }
+    
+    return expandedKey;
 }

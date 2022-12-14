@@ -14,9 +14,7 @@ using namespace std;
 void displayPhrases(map<string, string> phrases);
 bool validString(string input);
 string toUpper(string input);
-
 bool validLen(int phrase, int key);
-
-
+string expand(int length, string key);
 
 #endif /* HELPERS_H */

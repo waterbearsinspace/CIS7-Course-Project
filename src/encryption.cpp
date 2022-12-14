@@ -14,7 +14,14 @@ void encrypt(map<string, string> &phrases) {
         string key = getKey(phrase.length());
 
         key = toUpper(key);
-        cout << "You've entered " << key << endl << endl;
+        cout << "You've entered " << key;
+        
+        if (key.length() < phrase.length()) {
+            key = expand(phrase.length(), key);
+            cout << ", expanded to " << key;
+        }
+        
+        cout << endl << endl;
 
         phrases.insert(pair<string, string>(phrase, key));
         cout << "Encryption saved!" << endl << endl;
@@ -48,7 +55,7 @@ string getPhrase() {
     return phrase;
 }
 
-string getKey(int length){
+string getKey(int length) {
     bool valid = false;
     string key = "";
     
@@ -73,4 +80,9 @@ string getKey(int length){
     }
     
     return key;
+}
+
+string encrypt(string phrase, string key) {
+    
+    return "";
 }

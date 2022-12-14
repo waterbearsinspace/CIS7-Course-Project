@@ -21,6 +21,24 @@ void menu() {
     
     cout << "Please enter a [#] to select an option: ";
     
+    string input = getSelection();
+    
+    cout << endl;
+    
+    if (input == "1") {
+        encrypt(phrases);
+    }
+    
+    else if (input == "2") {
+        decrypt(phrases);
+    }
+    
+    else if (input == "3") {
+        finished = true;
+    }
+}
+
+string getSelection() {
     string input = "";
     bool valid = false;
     
@@ -36,17 +54,5 @@ void menu() {
         }
     }
     
-    cout << endl;
-    
-    if (input == "1") {
-        encrypt(phrases);
-    }
-    
-    else if (input == "2") {
-        decrypt(phrases);
-    }
-    
-    else if (input == "3") {
-        finished = true;
-    }
+    return input;
 }

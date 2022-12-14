@@ -10,5 +10,6 @@ using namespace std;
 
 void vigenere();
 void menu();
+string getSelection();
 
 #endif /* VIGENERE_H */

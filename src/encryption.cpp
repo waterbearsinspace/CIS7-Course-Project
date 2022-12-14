@@ -5,10 +5,10 @@ void encrypt(map<string, string> &phrases) {
     bool done = false;
     
     while (!done) {        
-        string phrase = getPhrase();
+        string phrase = getEncryptionPhrase();
         if (phrase == "") break;
         
-        string key = getKey(phrase.length());
+        string key = getEncryptionKey(phrase.length());
         
         string encryptedPhrase = encrypt(phrase, key);
         phrases.insert(pair<string, string>(encryptedPhrase, key));
@@ -19,10 +19,10 @@ void encrypt(map<string, string> &phrases) {
     }
     
     cout << endl;
-    cout << "Returning to menu." << endl << endl;
+    cout << "Returning to menu..." << endl << endl;
 }
 
-string getPhrase() {
+string getEncryptionPhrase() {
     bool valid = false;
     string phrase = "";
     
@@ -50,7 +50,7 @@ string getPhrase() {
     return phrase;
 }
 
-string getKey(int length) {
+string getEncryptionKey(int length) {
     bool valid = false;
     string key = "";
     

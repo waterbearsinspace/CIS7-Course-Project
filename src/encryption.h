@@ -6,8 +6,8 @@
 
 void encrypt(map<string, string> &phrases);
 
-string getPhrase();
-string getKey(int length);
+string getEncryptionPhrase();
+string getEncryptionKey(int length);
 string encrypt(string phrase, string key);
 
 #endif /* ENCRYPTION_H */

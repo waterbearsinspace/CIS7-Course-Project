@@ -14,6 +14,8 @@ void vigenere() {
 }
 
 void menu() {
+    displayTitle();
+    
     displayPhrases(phrases);
     cout << "[#1] Encrypt " << endl;
     cout << "[#2] Decrypt " << endl;

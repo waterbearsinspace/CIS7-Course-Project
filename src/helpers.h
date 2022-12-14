@@ -18,5 +18,6 @@ string toUpper(string input);
 string removeSpaces(string key);
 string convert(string phrase);
 string expand(string phrase, string key);
+void displayTitle();
 
 #endif /* HELPERS_H */

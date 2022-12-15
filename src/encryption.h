@@ -4,10 +4,10 @@
 
 #include "helpers.h"
 
-void encrypt(map<string, string> &phrases);
+void encrypt(map<string, string> &phrases); // Handles encryption
 
-string getEncryptionPhrase();
-string getEncryptionKey(int length);
-string encrypt(string phrase, string key);
+string getEncryptionPhrase();               // Gets valid encryption phrase
+string getEncryptionKey(int length);        // Gets valid encryption key
+string encrypt(string phrase, string key);  // Returns encrypted phrase
 
 #endif /* ENCRYPTION_H */

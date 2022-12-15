@@ -4,10 +4,10 @@
 
 #include "helpers.h"
 
-void decrypt(map<string, string> &phrases);
+void decrypt(map<string, string> &phrases);     // Handles decryption
 
-string getDecryptionPhrase();
-string getDecryptionKey(int length);
-string decrypt(string phrase, string key);
+string getDecryptionPhrase();               // Gets valid decryption phrase
+string getDecryptionKey(int length);        // Gets valid decryption key
+string decrypt(string phrase, string key);  // Returns decrypted phrase
 
 #endif /* DECRYPTION_H */

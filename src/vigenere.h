@@ -8,8 +8,8 @@
 
 using namespace std;
 
-void vigenere();
-void menu();
-string getSelection();
+void vigenere();        // Contains the program loop
+void menu();            // Handles menu and calling other sections
+string getSelection();  // Return valid user input once received
 
 #endif /* VIGENERE_H */
